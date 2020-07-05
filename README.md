@@ -12,6 +12,7 @@ You will need to create a file named config.json in the base directory.
 
 server_ip: server ip
 server_port: server port
+custom_thumb: custom thumbnail for the server status embed
 token: your discord api token
 command_prefix: command prefix.
 refresh_time: how often should the bot refresh the server status in the background in seconds
@@ -19,6 +20,7 @@ refresh_time: how often should the bot refresh the server status in the backgrou
 {
     "server_ip": "127.0.0.1",
     "server_port": 27015,
+    "custom_thumb": "",
     "token" : "YOUR_DISCORD_API_TOKEN",
     "command_prefix" : "!",
     "refresh_time" : 600
