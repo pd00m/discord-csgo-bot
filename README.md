@@ -29,3 +29,7 @@ refresh_time: how often should the bot refresh the server status in the backgrou
 ```
 python3 main.py
 ```
+
+Type in !server in one of the channels that the bot has access to
+
+![Response from bot](response.png?raw=true "response")
