@@ -59,8 +59,11 @@ async def on_ready():
 async def server(ctx):   
     server_info.get()
     status = server_info.curr_map + ' | ' + server_info.players  
-    embedVar = discord.Embed(title=server_info.server_name, color=0x00ff00)
-    embedVar.set_thumbnail(url=config.get('custom_thumb'))
+    embedVar = discord.Embed(title=server_info.server_name, color=0x00ff00) 
+    if(len(config.get('custom_thumb')) > 0):
+        embedVar.set_thumbnail(url=config.get('custom_thumb'))
+    if(len(config.get('custom_banner')) > 0):
+        embedVar.set_image(url=config.get('custom_banner'))
     embedVar.add_field(name='Connect', value=server_info.connect_link, inline=False)
     embedVar.add_field(name='Map', value=server_info.curr_map, inline=True)
     embedVar.add_field(name='Players', value=server_info.players, inline=True)
