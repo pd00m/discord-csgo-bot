@@ -20,7 +20,7 @@ class server_info():
             server_info = a2s.info((self.ip_address, self.server_port ))
             self.player_list = a2s.players((self.ip_address, self.server_port))
             self.server_name = server_info.server_name
-            self.curr_map = server_info.map_name
+            self.curr_map = server_info.map_name.split('/')[-1]
             self.players = str(server_info.player_count) + '/' + str(server_info.max_players)
             self.ping = str(int((server_info.ping* 1000))) + 'ms'
             print('Server: ' + self.ip_address + ':' + str(self.server_port) + ' | Ping: ' + self.ping + ' | Map: ' + self.curr_map + ' | Players: ' + self.players)
