@@ -1,5 +1,5 @@
 # discord-csgo-bot
-a simple bot for discord for getting the server status via command
+a simple discord bot for getting the status of a CSGO server via command 
 
 ## Installing
 ```
@@ -10,13 +10,15 @@ pip3 install -r requirements.txt
 ### Configuration
 You will need to create a file named config.json in the base directory.
 
-server_ip: server ip
-server_port: server port
-custom_thumb: custom thumbnail path for the server status embed, leave empty if you don't want it
-custom_banner: custom banner path for the server status embed, leave empty if you don't want it
-token: your discord api token
-command_prefix: command prefix.
-refresh_time: how often should the bot refresh the server status in the background in seconds
+server_ip: server ip  
+server_port: server port  
+custom_thumb: custom thumbnail path for the server status embed, leave empty if you don't want it  
+custom_banner: custom banner path for the server status embed, leave empty if you don't want it  
+token: your discord api token  
+command_prefix: command prefix.  
+refresh_time: how often should the bot refresh the server status in the background in seconds  
+
+
 ```json
 {
     "server_ip": "127.0.0.1",
