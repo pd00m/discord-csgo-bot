@@ -7,6 +7,7 @@ python3 -m venv env
 source env/bin/activate
 pip3 install -r requirements.txt
 ```
+
 ## Configuration
 You will need to create a file named config.json in the base directory.
 
@@ -53,6 +54,41 @@ You will need to create a file named config.json in the base directory.
 python3 main.py
 ```
 
+### run as systemd service
+/etc/systemd/system/discordbot.service
+```
+[Unit]
+Description=Discord csgo bot
+After=syslog.target
+
+[Service]
+Type=simple
+WorkingDirectory=~/discord-csgo-bot
+ExecStart=~/discord-csgo-bot/env/bin/python3 ~/discord-csgo-bot
+Restart=always
+RestartSec=10
+
+[Install]
+WantedBy=multi-user.target
+```
+*systemd need the full path to your python binary if you're using a venv!* 
+
+Reload daemon and start service manually:
+```
+sudo systemctl daemon-reload
+sudo systemctl start discordbot.service
+```
+
+To make it start automatically after reboot:
+```
+sudo systemctl enable discordbot.service
+```
+
+Check the current ouput of the service:
+```
+sudo journalctl -u discordbot.service
+```
+
 ### Commands
 **!server:** show server info embed  
 **!ip:** get connect link to server  
@@ -61,3 +97,18 @@ python3 main.py
 **!mmstop:** exit matchmaking queue  
 
 ![Response from bot](response.png?raw=true "response")
+*Respone after sending !server command*
+
+## Common issues
+
+### The bot is not responding to any commands
+Check the bot privileges for that channel. It has to be able to read and send messages for that particular channel
+
+### !server is not showing player names and score
+Check if server cvar `host_players_show` is set to 2, otherwise all player names are hidden by the server
+
+### The ping is incorrect
+The bot itself is pinging the server so this depends on the internet connection the bot has
+
+### The connect link is not doing anything
+If you have a password protected server, for some people the password input window from steam is not focussing and pops up in the background sometimes
