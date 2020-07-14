@@ -13,7 +13,6 @@ You will need to create a file named config.json in the base directory.
 server_ip: server ip  
 server_port: server port  
 custom_thumb: custom thumbnail path for the server status embed, leave empty if you don't want it  
-custom_banner: custom banner path for the server status embed, leave empty if you don't want it  
 token: your discord api token  
 command_prefix: command prefix.  
 refresh_time: how often should the bot refresh the server status in the background in seconds  
@@ -28,7 +27,6 @@ server_commands[list]: csgo server commands that are availiable
     "server_ip": "127.0.0.1",
     "server_port": 27015,
     "custom_thumb": "https://test.com/images/test.png",
-    "custom_banner": "https://test.com/images/test.png",
     "token" : "YOUR_DISCORD_API_TOKEN",
     "command_prefix" : "!",
     "refresh_time" : 600,
@@ -56,10 +54,10 @@ python3 main.py
 ```
 
 ### Commands
-!server: show server info embed
-!ip: get connect link to server
-!mminfo: show currently searching players
-!mmsearch: enter matchmaking search queue
-!mmstop: exit matchmaking queue
+!server: show server info embed  
+!ip: get connect link to server  
+!mminfo: show currently searching players  
+!mmsearch: enter matchmaking search queue  
+!mmstop: exit matchmaking queue  
 
 ![Response from bot](response.png?raw=true "response")
