@@ -4,5 +4,4 @@ services:
     build: .
     ports:
      - "80:80"
-  redis:
-    image: "redis:alpine"
+    restart: always
